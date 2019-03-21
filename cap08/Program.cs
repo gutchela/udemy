@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cap08.Entities;
+using System;
 
 namespace cap08
 {
@@ -6,7 +7,19 @@ namespace cap08
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Order order = new Order
+            {
+                Id = 1080,
+                Moment = DateTime.Now,
+                Status = Entities.Enums.OrderStatus.PendingPayment
+
+            };
+
+            Console.WriteLine(order);
+
+            string txt = Entities.Enums.OrderStatus.PendingPayment.ToString();
+            Console.WriteLine();
+            Console.WriteLine(txt);
         }
     }
 }
